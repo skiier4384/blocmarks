@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe TopicsController, type: :controller do
   
   let(:my_user) { User.create!(name: "Blocmarks User", email: "user@blocmarks.com", password: "helloworld") }
-  let(:my_topic) { Topic.create!(title: "Sample Topic Title", body: "Sample Topic Body", user: my_user) }
+  let(:my_topic) { Topic.create!(title: "Sample Topic Title", user: my_user) }
 
   describe "GET #index" do
     it "returns http success" do
