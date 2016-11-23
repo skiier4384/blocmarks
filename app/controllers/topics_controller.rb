@@ -14,7 +14,7 @@ class TopicsController < ApplicationController
   def create
      @topic = Topic.new
      @topic.title = params[:topic][:title]
-     @topic.body = params[:topic][:body]
+     #@topic.body = params[:topic][:body]
 
      if @topic.save
        flash[:notice] = "Topic was saved successfully."
@@ -32,7 +32,7 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     @topic.title = params[:topic][:title]
-    @topic.body = params[:topic][:body]
+    #@topic.body = params[:topic][:body]
  
     if @topic.save
       flash[:notice] = "Topic was updated successfully."

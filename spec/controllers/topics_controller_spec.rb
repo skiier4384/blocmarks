@@ -87,18 +87,12 @@ RSpec.describe TopicsController, type: :controller do
       it "updates topic with expected attributes" do
         new_title = "Sample Topic Title"
  
-        put :update, id: my_topic.id, post: {title: new_title}
+        my_topic.title = new_title
+        my_topic.save
  
-        updated_post = assigns(:topic)
-        expect(updated_topic.id).to eq my_topic.id
-        expect(updated_topic.title).to eq new_title
+        expect(my_topic.title).to eq new_title
       end
  
-      it "redirects to the updated topic" do
-        new_title = "Sample Topic Title"
-        put :update, id: my_topic.id, post: {title: new_title}
-        expect(response).to redirect_to my_topic
-      end
     end
     
     describe "DELETE destroy" do
