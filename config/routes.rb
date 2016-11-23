@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :topics do
     resources :bookmarks
   end
+  
+  post :incoming, to: 'incoming#create'
 
   #get 'topics/index'
 
