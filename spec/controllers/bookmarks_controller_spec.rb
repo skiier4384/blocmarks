@@ -91,7 +91,7 @@ RSpec.describe BookmarksController, type: :controller do
       it "redirects to the updated bookmark" do
         new_url = "sampleURL@blocmarks.com"
         
-        put :update, id: my_topic.id, id: my_bookmark.id, bookmark: {url: new_url}
+        put :update, topic_id: my_topic.id, id: my_bookmark.id, bookmark: {url: new_url}
         expect(response).to redirect_to [my_topic, my_bookmark]
       end
     end
